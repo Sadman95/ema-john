@@ -1,9 +1,16 @@
 import React from 'react';
+import './Shop.css'
 
 const Shop = () => {
+    
     return (
-        <div>
-            <h2>this is inside shop</h2>
+        <div className="shop-container">
+            <div className="products-container">
+                <h1>Products Section</h1>
+            </div>
+            <div className="cart-container">
+                <h1>Cart Section</h1>
+            </div>
         </div>
     );
 };
