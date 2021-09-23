@@ -2,6 +2,17 @@
     text-align: center;
     margin: 16px 0;
 }
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    font-size: 48px;
+    margin-right: 10px;
+    margin-bottom: 16px;
+    color: #221F1F;
+}
 .logo{
     height: 70px;
     width: 250px;
