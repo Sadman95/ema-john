@@ -1,0 +1,9 @@
+.featureTitle{
+    color: dimgray;
+    border-bottom: 1px solid lightgray;
+}
+.featureStyle{
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 10px;
+}

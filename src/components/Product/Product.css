@@ -19,3 +19,8 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
