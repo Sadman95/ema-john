@@ -1,0 +1,8 @@
+.cart{
+    /* position: fixed;
+    top: 50vh;
+    right: 20vw; */
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+}
