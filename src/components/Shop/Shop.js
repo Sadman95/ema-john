@@ -6,21 +6,21 @@ import './Shop.css'
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+    const [displaySearched, setDisplaySearched] = useState([])
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        console.log('api called')
         fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-simple-resources/master/fakeData/products.JSON')
         .then(res => res.json())
         .then(data => { 
             setProducts(data)
-            console.log('api data receivd')
+            setDisplaySearched(data)
         }
         )
     }, [])
 
     useEffect(() =>{
-        console.log('local storage called')
         const savedProducts = getStoredCart();
+        // problem: not update incase of more than one of a product:
         if(products.length){
             const savedEmpty = [];
             for (const key in savedProducts) {
@@ -41,23 +41,33 @@ const Shop = () => {
         addToDb(product.key)
     }
 
+    const handleSearch = event => {
+        const searchText = event.target.value;
+        const sarchedProducts = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()))
+        setDisplaySearched(sarchedProducts)
+    }
     return (
-        <div className="shop-container">
-            <div className="products-container">
-                {/* <h1>Products: {products.length}</h1> */}
-                {
-                    products.map(product => <Product
-                        key={product.key} 
-                        item={product}
-                        handleAdd={handleAdd}
-                        >
-                        </Product>)
-                }
+        <>
+            <div className="searchField-container">
+                <input onChange={handleSearch} className="search-box" type="text" />
             </div>
-            <div className="cart-container">
-                <Cart cart={cart}></Cart>
+            <div className="shop-container">
+                <div className="products-container">
+                    {/* <h1>Products: {products.length}</h1> */}
+                    {
+                        displaySearched.map(product => <Product
+                            key={product.key} 
+                            item={product}
+                            handleAdd={handleAdd}
+                            >
+                            </Product>)
+                    }
+                </div>
+                <div className="cart-container">
+                    <Cart cart={cart}></Cart>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

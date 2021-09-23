@@ -9,3 +9,12 @@
 .cart-container{
     margin-left: 5px;
 }
+.searchField-container{
+    background-color: lightslategray;
+    padding: 16px;
+    text-align: center;
+}
+.search-box{
+    width: 60%;
+    min-height: 24px;
+}
