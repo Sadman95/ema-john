@@ -19,23 +19,30 @@ const Shop = () => {
     }, [])
 
     useEffect(() =>{
-        const savedProducts = getStoredCart();
         // problem: not update incase of more than one of a product:
         if(products.length){
-            const savedEmpty = [];
-            for (const key in savedProducts) {
-                const matched = products.find(product => product.key === key)
-                console.log(matched)
-                savedEmpty.push(matched);
+            const savedCart = getStoredCart();
+            const savedProduct = [];
+            for (const key in savedCart) {
+                console.log(key, savedCart[key])
+                const matchedProducts = products.find(product => product.key === key);
+                // console.log(matchedProducts)
+                if(matchedProducts){
+                    const quantity = savedCart[key];
+                    // console.log(quantity)
+                    matchedProducts.quantity = quantity;
+                    console.log(matchedProducts)
+                    savedProduct.push(matchedProducts);
+                }
             }
-            setCart(savedEmpty);
+            setCart(savedProduct);
         }
         
     }, [products])
 
     
     const handleAdd = (product) => {
-        console.log(product)
+        // console.log(product)
         const newCart = [...cart, product];
         setCart(newCart);
         addToDb(product.key)

@@ -4,11 +4,22 @@ import './Cart.css'
 const Cart = (props) => {
     // console.log(props)
     let {cart} = props;
+    // console.log(cart)
 // sub-total:
-    let total = 0;
+    let total_price = 0;
+    let total_quantity = 0;
     for (const product of cart) {
-        total = total + product.price;
-    }
+        // console.log(product)
+        if(!product.quantity){
+            product.quantity = 1;
+        }
+        // console.log(product);
+        else{
+            total_price = total_price + product.price * product.quantity;
+            total_quantity = total_quantity + product.quantity;
+        }
+        }
+        
 // shipping:
     // reducer method: {
    const reducer = (previous_amount, product) => previous_amount + product.shipping;
@@ -21,14 +32,14 @@ const Cart = (props) => {
     } */
 
 // tax:
-    let tax = total*0.2;
+    let tax = total_price*0.2;
 // grand-total:
-    let grand_total = total + shipping + tax;
+    let grand_total = total_price + shipping + tax;
     return (
         <div className="cart">
             <h2>Cart</h2>
-            <h4>Items: {props['cart'].length}</h4>
-            <h4>Sub total: ${total.toFixed(2)}</h4>
+            <h4>Items: {total_quantity}</h4>
+            <h4>Sub total: ${total_price.toFixed(2)}</h4>
             <h4>Shipping charge: ${shipping.toFixed(2)}</h4>
             <h4>Tax: ${tax.toFixed(2)}</h4>
             <h4>Grand total: ${grand_total.toFixed(2)}</h4>
