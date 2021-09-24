@@ -18,6 +18,7 @@ const Shop = () => {
         )
     }, [])
 
+
     useEffect(() =>{
         // problem: not update incase of more than one of a product:
         if(products.length){
@@ -33,14 +34,12 @@ const Shop = () => {
                     matchedProducts.quantity = quantity;
                     console.log(matchedProducts)
                     savedProduct.push(matchedProducts);
-                }
+                }           
             }
             setCart(savedProduct);
         }
         
     }, [products])
-
-    
     const handleAdd = (product) => {
         // console.log(product)
         const newCart = [...cart, product];
@@ -56,7 +55,7 @@ const Shop = () => {
     return (
         <>
             <div className="searchField-container">
-                <input onChange={handleSearch} className="search-box" type="text" />
+                <input onChange={handleSearch} className="search-box" type="text" placeholder="search your favorite product i.e laptop" />
             </div>
             <div className="shop-container">
                 <div className="products-container">
