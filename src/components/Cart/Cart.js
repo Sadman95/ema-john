@@ -14,10 +14,8 @@ const Cart = (props) => {
             product.quantity = 1;
         }
         // console.log(product);
-        else{
             total_price = total_price + product.price * product.quantity;
             total_quantity = total_quantity + product.quantity;
-        }
         }
         
 // shipping:
