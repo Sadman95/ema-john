@@ -1,13 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import ReactStars from "react-rating-stars-component";
 import Features from './Features/Features';
 import './Product.css'
 
 
 const Product = (props) => {
     // console.log(props.item['features'])
-    const {name, img, price, seller, stock, features} = props.item;
+    const {name, img, price, seller, stock, features, star} = props.item;
     const cartIcon = <FontAwesomeIcon style={{marginRight: "5px"}} icon={faShoppingCart}></FontAwesomeIcon>;
     return (
         <div className="product-details">
@@ -24,6 +25,13 @@ const Product = (props) => {
                         <button onClick={()=>props.handleAdd(props.item)} className="btn-add">{cartIcon}Add to cart</button>
                     </div>
                     <div>
+                        <ReactStars count={5}
+                                    value={star}
+                                    edit= {false}
+                                    size={24}
+                                    color="dimGrey"
+                                    activeColor="gold">
+                        </ReactStars>
                         <Features features={features}></Features>
                     </div>
                 </div>
