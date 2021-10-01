@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/logo.png';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const basketIcon = <FontAwesomeIcon className="icon" icon={faShoppingBag}></FontAwesomeIcon>
@@ -14,9 +15,9 @@ const Header = () => {
             </div>
             <nav className="nav">
                 <ul className="menu">
-                    <li><a href="/shop">Shop</a></li>
-                    <li><a href="/orders">Order Review</a></li>
-                    <li><a href="/inventory">Manage Inventory</a></li>
+                    <li><Link to="/shop">Shop</Link></li>
+                    <li><Link to="/review">Order Review</Link></li>
+                    <li><Link to="/inventory">Manage Inventory</Link></li>
                 </ul>
             </nav>
         </div>
