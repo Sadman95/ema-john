@@ -14,7 +14,7 @@ const Cart = (props) => {
         else{
             total_price = total_price + product.price * product.quantity;
             // **** //
-            total_quantity = total_quantity? total_quantity+1:total_quantity+product.quantity;   
+            total_quantity = total_quantity + product.quantity;    
         }
         }
         
@@ -42,9 +42,7 @@ const Cart = (props) => {
             <h4>Shipping charge: ${shipping.toFixed(2)}</h4>
             <h4>Tax: ${tax.toFixed(2)}</h4>
             <h4>Grand total: ${grand_total.toFixed(2)}</h4>
-            <Link to="/review">
-            <button className="btn-add">Review Items</button>
-            </Link>
+            {props.children}
         </div>
     );
 };

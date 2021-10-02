@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
+import OrderPlaced from './components/OrderPlaced/OrderPlaced';
 import Review from './components/Review/Review';
 import Shop from './components/Shop/Shop';
 
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path='/inventory'>
           <Inventory></Inventory>
+          </Route>
+          <Route path="/placed">
+            <OrderPlaced></OrderPlaced>
           </Route>
           <Route path='*'>
           <NotFound></NotFound>
