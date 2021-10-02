@@ -24,7 +24,7 @@ function App() {
           <Route path='/inventory'>
           <Inventory></Inventory>
           </Route>
-          <Route path="/placed">
+          <Route path="/placeorder">
             <OrderPlaced></OrderPlaced>
           </Route>
           <Route path='*'>
