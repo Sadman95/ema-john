@@ -7,7 +7,6 @@ import './Product.css'
 
 
 const Product = (props) => {
-    // console.log(props.item['features'])
     const {name, img, price, seller, stock, features, star} = props.item;
     const cartIcon = <FontAwesomeIcon style={{marginRight: "5px"}} icon={faShoppingCart}></FontAwesomeIcon>;
     return (

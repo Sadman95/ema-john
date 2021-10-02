@@ -10,7 +10,7 @@ const useCart = products =>{
             const savedCart = getStoredCart();
             const savedProduct = [];
             for (const key in savedCart) {
-                console.log(key, savedCart[key])
+                // console.log(key, savedCart[key])
                 const matchedProducts = products.find(product => product.key === key);
                 // console.log(matchedProducts)
                 if(matchedProducts){

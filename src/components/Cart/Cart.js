@@ -1,28 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getDb } from '../../utilities/fakedb';
 import './Cart.css'
 
 const Cart = (props) => {
     let {cart} = props;
-    console.log(cart)
 // sub-total:
     let total_price = 0;
     let total_quantity = 0;
     for (const product of cart) {
-        // console.log(product)
-        const savedDb = getDb();
-        const savedDbObj = JSON.parse(savedDb);
-        if(product.key in savedDbObj === false){
+        if(!product.quantity){
             product.quantity = 1;
         }
-        // console.log(product);
         else{
-            
-            total_price = total_price + product.price * savedDbObj[product.key];
-            // previous total dhore rakhe(problem)
-            total_quantity =total_quantity + savedDbObj[product.key];
-            
+            total_price = total_price + product.price * product.quantity;
+            // **** //
+            total_quantity = total_quantity? total_quantity+1:total_quantity+product.quantity;   
         }
         }
         
@@ -44,7 +36,7 @@ const Cart = (props) => {
     return (
         <div className="cart">
             <h2>Cart</h2>
-            <h3>{cart.length}</h3>
+            
             <h4>Items: {total_quantity}</h4>
             <h4>Sub total: ${total_price.toFixed(2)}</h4>
             <h4>Shipping charge: ${shipping.toFixed(2)}</h4>

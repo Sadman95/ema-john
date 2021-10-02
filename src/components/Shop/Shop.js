@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
-import { addToDb} from '../../utilities/fakedb';
+import { addToDb, getStoredCart} from '../../utilities/fakedb';
 import './Shop.css'
 import useCart from '../../hooks/useCart';
 
@@ -20,7 +20,6 @@ const Shop = () => {
     }, [])
 
     const [cart, setCart] = useCart(products);
-
     const handleAdd = (product) => {
         // console.log(product)
         const newCart = [...cart, product];
@@ -40,7 +39,6 @@ const Shop = () => {
             </div>
             <div className="shop-container">
                 <div className="products-container">
-                    {/* <h1>Products: {products.length}</h1> */}
                     {
                         displaySearched.map(product => <Product
                             key={product.key} 
