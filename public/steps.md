@@ -12,4 +12,6 @@ Step-2:
 
 Step-3:
 -------
-
+1. useFirebase custom hook created.
+2. google sign in & sign out added.
+3. special observer added to get current user.
