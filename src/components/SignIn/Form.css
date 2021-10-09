@@ -1,0 +1,11 @@
+.submit-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.form-style{
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0px 0px 0px 1px lightgrey;
+}

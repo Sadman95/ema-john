@@ -6,6 +6,8 @@ import NotFound from './components/NotFound/NotFound';
 import OrderPlaced from './components/OrderPlaced/OrderPlaced';
 import Review from './components/Review/Review';
 import Shop from './components/Shop/Shop';
+import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
           </Route>
           <Route path="/placeorder">
             <OrderPlaced></OrderPlaced>
+          </Route>
+          <Route path="/signin">
+            <SignIn></SignIn>
+          </Route>
+          <Route path="/signup">
+            <SignUp></SignUp>
           </Route>
           <Route path='*'>
           <NotFound></NotFound>
