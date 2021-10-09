@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Form.css'
 
 const SignIn = () => {
+    const {signInWithGoogle} = useAuth();
     return (
         <div className="submit-form">
             <div className="form-style">
@@ -18,7 +20,7 @@ const SignIn = () => {
             </form>
             <p>New to ema-john?<Link to="/signup"> Create Account</Link></p>
             <p>-------Or Sign In Using---------</p>
-            <button className="btn-add">Google</button>
+            <button onClick={signInWithGoogle} className="btn-add">Google</button>
             </div>
         </div>
     );

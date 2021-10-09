@@ -15,3 +15,13 @@ Step-3:
 1. useFirebase custom hook created.
 2. google sign in & sign out added.
 3. special observer added to get current user.
+
+Step-4:
+-------
+1. global AuthContext created.
+2. useAuth custom hook created to get return from firebase AuthContext.
+
+Step-5:
+-------
+1. if sign-in, there is a sign-out or log-out.
+2. PrivateRoute set for Order review.

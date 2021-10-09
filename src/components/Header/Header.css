@@ -40,3 +40,10 @@
 .menu li:hover a{
     color: black;
 }
+.name-logout{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 32px;
+}
