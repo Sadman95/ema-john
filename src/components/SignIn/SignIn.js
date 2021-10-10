@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { useLocation, useHistory } from 'react-router';
 import './Form.css'
 
 const SignIn = () => {
     const {signInWithGoogle} = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/shop';
+
+    const handleSignIn = () =>{
+        signInWithGoogle()
+        .then((result) =>{
+            history.push(redirect_uri);
+        })
+    }
+
     return (
         <div className="submit-form">
             <div className="form-style">
@@ -20,7 +32,7 @@ const SignIn = () => {
             </form>
             <p>New to ema-john?<Link to="/signup"> Create Account</Link></p>
             <p>-------Or Sign In Using---------</p>
-            <button onClick={signInWithGoogle} className="btn-add">Google</button>
+            <button onClick={handleSignIn} className="btn-add">Google</button>
             </div>
         </div>
     );

@@ -25,3 +25,4 @@ Step-5:
 -------
 1. if sign-in, there is a sign-out or log-out.
 2. PrivateRoute set for Order review.
+* 3. browsing location is captured so that user can redirect to the     location where he/she wants.---->Tricky.
