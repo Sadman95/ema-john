@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.shipping-form{
+  border: 1px solid lightgray;
+  padding: 16px 32px;
+  border-radius: 5px;
+  margin-top: 32px;
+}
+.shipping-form input{
+  font-size: 1rem;
+  margin: 5px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}

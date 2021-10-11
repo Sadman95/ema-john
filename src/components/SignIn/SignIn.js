@@ -5,7 +5,7 @@ import { useLocation, useHistory } from 'react-router';
 import './Form.css'
 
 const SignIn = () => {
-    const {signInWithGoogle} = useAuth();
+    const {signInWithGoogle, setError} = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/shop';
@@ -15,13 +15,16 @@ const SignIn = () => {
         .then((result) =>{
             history.push(redirect_uri);
         })
+        .catch(error =>{
+            setError(error.message)
+        })
     }
 
     return (
         <div className="submit-form">
             <div className="form-style">
             <h1>Sign-In</h1>
-            <form onSubmit="">
+            <form>
                 <label htmlFor="email">Email</label><br />
                 <input type="email" name="email" id="email" placeholder="Your Email" />
                 <br /><br />

@@ -2,7 +2,7 @@
     text-align: center;
     margin: 16px 0;
 }
-.heading{
+.heading,.shipping{
     display: flex;
     justify-content: center;
     align-items: center;

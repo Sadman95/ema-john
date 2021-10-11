@@ -42,6 +42,7 @@ const useFirebase = () =>{
         error,
         signInWithGoogle,
         logOut,
+        setError
     }
 }
 export default useFirebase;

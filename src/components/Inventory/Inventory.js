@@ -8,4 +8,4 @@ const Inventory = () => {
     );
 };
 
-export default Inventory;<h1>this is Inventory</h1>
+export default Inventory;
