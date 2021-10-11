@@ -5,7 +5,6 @@ import './Shop.css'
 import useCart from '../../hooks/useCart';
 import { addToDb } from '../../utilities/fakedb';
 import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
