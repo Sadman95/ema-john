@@ -25,7 +25,7 @@ const Shop = () => {
       });
   }, [page, content]);
 
-  const [cart, setCart] = useCart(products);
+  const [cart, setCart] = useCart();
   const handleAdd = (product) => {
     // console.log(product)
     // cart update:
@@ -63,13 +63,13 @@ const Shop = () => {
       <div className="shop-container">
         <div className="products-container">
             <div className='load-content'>
-                <div>
-                <span>Load Products:</span>
-                <button onClick={() =>setContent(10)}>10</button>
-                <button onClick={() =>setContent(20)}>20</button>
-                <button onClick={() =>setContent(30)}>30</button>
-                <button onClick={() =>setContent(40)}>40</button>
-                </div>
+                
+                <span>Load Products Per Page: </span>
+                <button className='btn-page' onClick={() =>setContent(10)}>10</button>
+                <button className='btn-page' onClick={() =>setContent(20)}>20</button>
+                <button className='btn-page' onClick={() =>setContent(30)}>30</button>
+                <button className='btn-page' onClick={() =>setContent(40)}>40</button>
+                
             </div>
           {displaySearched.map((product) => (
             <Product

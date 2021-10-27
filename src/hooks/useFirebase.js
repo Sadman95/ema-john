@@ -12,6 +12,7 @@ const useFirebase = () =>{
     const googleProvider = new GoogleAuthProvider();
 
     // sign in with google:
+    
     const signInWithGoogle = () =>{
         return signInWithPopup(auth, googleProvider);
         
@@ -42,7 +43,7 @@ const useFirebase = () =>{
         error,
         signInWithGoogle,
         logOut,
-        setError
+        setError,
     }
 }
 export default useFirebase;

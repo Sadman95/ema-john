@@ -27,7 +27,7 @@
 .btn-page{
     background-color: darkslateblue;
     border: none;
-    border-radius: 50%;
+    border-radius: 5px;
     color: white;
     padding: 16px;
     height: 20px;
@@ -48,7 +48,9 @@
     background-color: rgb(91, 211, 91);
 }
 .load-content{
-    display: flex-end;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     margin: 10px;
+    gap: 6px;
 }

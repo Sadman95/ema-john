@@ -5,10 +5,13 @@ import { useLocation, useHistory } from 'react-router';
 import './Form.css'
 
 const SignIn = () => {
+
     const {signInWithGoogle, setError} = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/shop';
+
+ 
 
     const handleSignIn = () =>{
         signInWithGoogle()
@@ -18,7 +21,9 @@ const SignIn = () => {
         .catch(error =>{
             setError(error.message)
         })
+        
     }
+
 
     return (
         <div className="submit-form">
