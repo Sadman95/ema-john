@@ -20,6 +20,7 @@ const Shipping = () => {
   const onSubmit = (data) => {
     const savedCart = getStoredCart();
     data.cart = savedCart;
+    data.orderDate = new Date();
     fetch('http://localhost:5000/products/orders', {
       method: 'POST',
       headers: {
@@ -41,9 +42,9 @@ const Shipping = () => {
       <div className="shipping-form">
         <h1>Go For Shipping</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type='text' defaultValue={userInfo.name} {...register("name")} />
+          <input type='text' defaultValue={userInfo.name} />
           <br />
-          <input type='email' defaultValue={userInfo.mail} />
+          <input type='email' defaultValue={userInfo.mail} {...register("email")}/>
           <br />
           <input
           type='text'

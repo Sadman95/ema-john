@@ -6,7 +6,7 @@ import './Form.css'
 
 const SignIn = () => {
 
-    const {signInWithGoogle, setError} = useAuth();
+    const {signInWithGoogle, setError, setIsLoading} = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/shop';
@@ -14,6 +14,7 @@ const SignIn = () => {
  
 
     const handleSignIn = () =>{
+        setIsLoading(true);
         signInWithGoogle()
         .then((result) =>{
             history.push(redirect_uri);
@@ -21,6 +22,7 @@ const SignIn = () => {
         .catch(error =>{
             setError(error.message)
         })
+        .finally(() => setIsLoading(false));
         
     }
 

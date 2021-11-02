@@ -20,10 +20,13 @@ const Header = () => {
                         user.email ? 
                         <div className="name-logout">
                             <button className="btn-add" onClick={logOut}>Log Out</button>
-                            <span>{user.displayName} </span>
+                            <span>{user.email} </span>
                         </div>
                         :
                         <li><Link to="/signin">Sign In</Link></li>
+                    }
+                    {
+                        user.email && <li><Link to="/orders">Orders</Link></li>
                     }
                 </ul>
             </nav>
